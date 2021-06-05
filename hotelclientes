@@ -1,0 +1,47 @@
+package metodosverano;
+import java.util.Scanner;
+
+public class hotel {
+static Scanner sc=new Scanner(System.in);
+static 	String nombre;
+static 	String apellido;
+static int edad;
+static int numerohabitacion;
+	public hotel(String nombre,String apellido,int edad,int numerohabitacion) {
+		// Constructor
+		this.nombre=nombre;
+		this.apellido=apellido;
+		this.edad=edad;
+		this.numerohabitacion=numerohabitacion;
+	}
+	public  void saveCustomerInfo() {
+			System.out.println("First name: "+this.nombre);
+			System.out.println("Second name: "+this.apellido);
+			System.out.println("Age: "+this.edad);
+			System.out.println("Room number: "+numerohabitacion);
+	}
+	public static void main(String[] args) {
+		//Declaración de objeto
+		hotel cliente=new hotel(nombre,apellido,edad,numerohabitacion);
+		// Llamada a la función
+		int contador=0;
+		System.out.println("***********HOTEL SUMMER*************");
+		do {
+		System.out.println("Introduzca la información del cliente en nuestras bases de datos...");
+		System.out.println("Introduzca el nombre del cliente");
+			nombre=sc.next();
+		System.out.println("Introduza el apellido del cliente");
+			apellido=sc.next();
+		System.out.println("Introduzca la edad del cliente");
+			edad=sc.nextInt();
+		System.out.println("Introduza el número de habitación del cliente");
+			numerohabitacion=sc.nextInt();
+		cliente.saveCustomerInfo();
+		contador++;
+	}
+	while(contador!=4);
+		
+
+	}
+
+}
